@@ -1,0 +1,11 @@
+-- upload the text file to HDFS :
+./hdfs dfs -put text.txt/
+
+-- verify that the file was successfully uploaded on hdfs :
+./hdfs dfs -ls/
+
+-- execute the Hadoop program (need to generate the jar file) :
+./hadoop jar word_occurency.jar wordOccurrence.wordOccurrenceJob /text.txt /result
+
+-- checkout the result on http://localhost:50070 or by cmd :
+./hdfs dfs -cat /result/part-r-00000
